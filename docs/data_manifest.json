@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "data_protocol": "paper",
+  "generator_seed": 42,
+  "files": [
+    {
+      "name": "anomalousTrafficTest.txt",
+      "sha256": "ec77d784966896330869c5b596ede6a716101c14b5f139144915bb10822a03e1",
+      "bytes": 16090299,
+      "raw_requests": 25065,
+      "retained_requests": 15964,
+      "kind": "csic",
+      "mirrors": [
+        "https://raw.githubusercontent.com/msudol/Web-Application-Attack-Datasets/424c6e1c1951570473d9d6c0227eaaac6fdd6d02/OriginalDataSets/csic_2010/anomalousTrafficTest.txt",
+        "https://cdn.jsdelivr.net/gh/msudol/Web-Application-Attack-Datasets@424c6e1c1951570473d9d6c0227eaaac6fdd6d02/OriginalDataSets/csic_2010/anomalousTrafficTest.txt"
+      ],
+      "lf_sha256": "12fa4f0d496ceb859bb2652abf7f0f0ed8c59e1d9ce501b8a9a0ef38a625c046",
+      "mirror_commit": "424c6e1c1951570473d9d6c0227eaaac6fdd6d02"
+    },
+    {
+      "name": "normalTrafficTest.txt",
+      "sha256": "f4526669566789be7fd99f79e1bc2989ab39e74ab7ed5d667621fe23dce4ea6f",
+      "bytes": 20599204,
+      "raw_requests": 36000,
+      "retained_requests": 9622,
+      "kind": "csic",
+      "mirrors": [
+        "https://raw.githubusercontent.com/msudol/Web-Application-Attack-Datasets/424c6e1c1951570473d9d6c0227eaaac6fdd6d02/OriginalDataSets/csic_2010/normalTrafficTest.txt",
+        "https://cdn.jsdelivr.net/gh/msudol/Web-Application-Attack-Datasets@424c6e1c1951570473d9d6c0227eaaac6fdd6d02/OriginalDataSets/csic_2010/normalTrafficTest.txt"
+      ],
+      "lf_sha256": "f05dfc312d5d14fd1ed8371de27a9e4deab3dc09265f5d7f9df2643df8385089",
+      "mirror_commit": "424c6e1c1951570473d9d6c0227eaaac6fdd6d02"
+    },
+    {
+      "name": "synthetic_command_injection.txt",
+      "sha256": "47ae45d00603690b23694b145065528e8c94765f69f5ec4d857011f372b1ad81",
+      "bytes": 55607,
+      "raw_requests": 150,
+      "retained_requests": 145,
+      "kind": "synthetic",
+      "bundled_path": "data/synthetic/synthetic_command_injection.txt"
+    },
+    {
+      "name": "synthetic_normal.txt",
+      "sha256": "b60623e99e0ff09bbdfaf175ab5722800027de34e1bd2f1351d2c1f23e6b4322",
+      "bytes": 190596,
+      "raw_requests": 500,
+      "retained_requests": 410,
+      "kind": "synthetic",
+      "bundled_path": "data/synthetic/synthetic_normal.txt"
+    },
+    {
+      "name": "synthetic_path_traversal.txt",
+      "sha256": "0ad68cdedab6f602790d1f65f45686da15176b468ca9177eefc37c0a2feb2cd3",
+      "bytes": 53948,
+      "raw_requests": 150,
+      "retained_requests": 135,
+      "kind": "synthetic",
+      "bundled_path": "data/synthetic/synthetic_path_traversal.txt"
+    },
+    {
+      "name": "synthetic_sql_injection.txt",
+      "sha256": "42933115a8614fc17c62a8d09fec3b37c138125dbe66b7cf9d60af604604808b",
+      "bytes": 56200,
+      "raw_requests": 150,
+      "retained_requests": 148,
+      "kind": "synthetic",
+      "bundled_path": "data/synthetic/synthetic_sql_injection.txt"
+    },
+    {
+      "name": "synthetic_xss.txt",
+      "sha256": "91a38ff11f104faa202085dd42ea34aa64984c65f97e157a0b92e71de1a16a0b",
+      "bytes": 59092,
+      "raw_requests": 150,
+      "retained_requests": 148,
+      "kind": "synthetic",
+      "bundled_path": "data/synthetic/synthetic_xss.txt"
+    }
+  ]
+}

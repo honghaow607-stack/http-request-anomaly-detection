@@ -1,0 +1,41 @@
+{
+  "description": "Original implementation files imported without algorithm changes; dependency list is maintained separately.",
+  "files": [
+    {
+      "path": "run.py",
+      "sha256": "618525f72273edcae5d30c4c4ebd949b441c14eac90f37a2ec6572444c44c8f1"
+    },
+    {
+      "path": "src/app.py",
+      "sha256": "53313bb6009d0a74c0992140e0586837eb63707936e229768fc2dc0fcd6e5210"
+    },
+    {
+      "path": "src/data_loader.py",
+      "sha256": "26fb0f2e6cbc48dd6d6de9d8e5fa3d340c6d875f427fa838395f5ffa1e27f3cb"
+    },
+    {
+      "path": "src/evaluate.py",
+      "sha256": "b1b67e20b50512a4b600e6b759994c91ea15167c5198b1c4f22de33972a842c9"
+    },
+    {
+      "path": "src/features.py",
+      "sha256": "7f1cde002e20cea692ff4f847b57f891c0136ccf1af3ef1b1f7491052d906715"
+    },
+    {
+      "path": "src/models.py",
+      "sha256": "79286e9c162db12f90cf9521c107935b147a17cff6337b93f48fddfed1117e90"
+    },
+    {
+      "path": "src/predict.py",
+      "sha256": "476655107b6e5110232f658814583c559f74d72e5bb5f28654f75af9d2016a68"
+    },
+    {
+      "path": "src/preprocess.py",
+      "sha256": "00b5ed2e8bde34b172169cf09084daaad4168cadf1893de957dc329128223406"
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "4d96f2e58ff07b0cf338e9e673decc311b79485ea7c901c1931326312a9918e8"
+    }
+  ]
+}
