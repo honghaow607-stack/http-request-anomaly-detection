@@ -1,0 +1,8 @@
+{
+  "feature_transform_smoke": true,
+  "rf_fit_predict_smoke": true,
+  "encoding_probe_base_counts_per_label_per_depth": 60,
+  "all_five_seed_means_and_sds_match": true,
+  "full_training_rerun": false,
+  "optional_xgboost_not_installed_in_verification_environment": true
+}

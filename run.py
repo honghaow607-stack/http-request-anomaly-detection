@@ -52,33 +52,56 @@ def main() -> None:
 
     # ---------- [1/6] 加载数据 ----------
     print("\n[1/6] 加载数据集 ...")
-    df = load_dataset()
+    # rebuild=True 强制从 data/raw 重新解析（保证激进去重等数据层改动生效）
+    df = load_dataset(rebuild=True)
     print(f"  共 {len(df)} 条请求，恶意占比 {df['label'].mean():.1%}")
 
-    # ---------- [2/6] 划分训练集 / 测试集（8:2，分层抽样） ----------
-    print("\n[2/6] 划分训练/测试集（8:2，分层抽样保证两类比例一致）...")
+    # ---------- [2/6] 三段划分 64/16/20（训练/验证/测试，全部分层抽样） ----------
+    # 评审要求：模型选择必须用独立验证集，测试集只在最终评估时使用一次，
+    # 避免"用测试集选模型"导致的评估乐观偏差
+    print("\n[2/6] 三段划分（训练 64% / 验证 16% / 测试 20%，分层抽样）...")
     train_df, test_df = train_test_split(
         df, test_size=0.2, stratify=df["label"], random_state=RANDOM_STATE,
     )
+    train_df, val_df = train_test_split(
+        train_df, test_size=0.2, stratify=train_df["label"],
+        random_state=RANDOM_STATE,
+    )
     print(f"  训练集: {len(train_df)} 条（恶意 {train_df['label'].mean():.1%}）")
-    print(f"  测试集: {len(test_df)} 条（恶意 {test_df['label'].mean():.1%}）")
+    print(f"  验证集: {len(val_df)} 条（恶意 {val_df['label'].mean():.1%}）→ 用于选最优模型")
+    print(f"  测试集: {len(test_df)} 条（恶意 {test_df['label'].mean():.1%}）→ 仅终评一次")
 
     # ---------- [3/6] 特征工程（只在训练集上拟合词表，防数据泄漏） ----------
     print("\n[3/6] 特征工程（规则特征 + TF-IDF，仅在训练集上拟合）...")
     pipeline = FeaturePipeline()
     X_train = pipeline.fit_transform(train_df)   # 拟合词表 + 生成训练特征
+    X_val = pipeline.transform(val_df)           # 复用同一词表生成验证特征
     X_test = pipeline.transform(test_df)         # 复用同一词表生成测试特征
     y_train = train_df["label"].to_numpy()
+    y_val = val_df["label"].to_numpy()
     y_test = test_df["label"].to_numpy()
     print(f"  训练特征矩阵: {X_train.shape}")
+    print(f"  验证特征矩阵: {X_val.shape}")
     print(f"  测试特征矩阵: {X_test.shape}")
 
     # ---------- [4/6] 训练三个模型 ----------
     print("\n[4/6] 训练模型（逻辑回归 / 随机森林 / 梯度提升树）...")
     models = train_all_models(X_train, y_train)
 
-    # ---------- [5/6] 评估并出图 ----------
+    # ---------- [5/6] 评估：验证集选模 → 测试集终评 ----------
     print("\n[5/6] 评估模型并生成图表 ...")
+    # 5a. 验证集指标：仅用于选择最优模型（不写入最终报告）
+    metrics_val = {name: ev.evaluate_model(m, X_val, y_val)
+                   for name, m in models.items()}
+    print("  —— 验证集指标（用于选模）——")
+    for name, m in metrics_val.items():
+        print(f"    {name}: recall={m['recall']:.4f} f1={m['f1']:.4f} "
+              f"acc={m['accuracy']:.4f}")
+    best_name = max(metrics_val,
+                    key=lambda k: (metrics_val[k]["recall"], metrics_val[k]["f1"]))
+    print(f"  √ 验证集选出的最优模型: {best_name}")
+
+    # 5b. 测试集终评：所有模型的最终成绩（一次性使用，不反馈给训练/选模）
     metrics = {name: ev.evaluate_model(m, X_test, y_test)
                for name, m in models.items()}
     ev.save_metrics_summary(metrics)
@@ -96,13 +119,11 @@ def main() -> None:
     p3 = ev.plot_roc_curves(models, X_test, y_test)
     print(f"  √ ROC 对比图已保存: {p3.name}")
 
-    # ---------- [6/6] 选最优模型并保存 ----------
-    print("\n[6/6] 选择最优模型并保存 ...")
-    # 选择标准：召回率优先（漏报恶意请求的代价远高于误报正常请求），
-    # 召回率相同的情况下再比较 F1。详细解释见 README。
-    best_name = max(metrics, key=lambda k: (metrics[k]["recall"], metrics[k]["f1"]))
-    print(f"  最优模型: {best_name}")
-    print(f"    recall={metrics[best_name]['recall']:.4f}  "
+    # ---------- [6/6] 保存最优模型（测试集终评成绩写入 model.pkl） ----------
+    print("\n[6/6] 保存最优模型 ...")
+    # 选择依据来自验证集；此处打印其在测试集上的最终成绩
+    print(f"  最优模型: {best_name}（验证集选出）")
+    print(f"    测试集终评: recall={metrics[best_name]['recall']:.4f}  "
           f"f1={metrics[best_name]['f1']:.4f}  "
           f"roc_auc={metrics[best_name]['roc_auc']:.4f}")
 

@@ -488,13 +488,51 @@ def parse_request_file(path: Path, label: int, attack_type: str) -> list:
     return parsed
 
 
+# 参与去重时视为"易变"的请求头（会话 / 传输层字段）：
+# CSIC 2010 中同一条报文被重复记录时，这些字段的取值会逐字节微差
+# （如 Cookie 会话号、Content-Length、缓存控制、Accept 的 q 权重），
+# 若不做规范化就直接按全文去重，重复报文一条也去不掉。
+VOLATILE_HEADERS = {
+    "content-length", "cookie", "connection", "pragma", "cache-control",
+    "if-modified-since", "if-none-match", "date", "accept-encoding",
+}
+
+
+def _canonical_headers(headers_text: str) -> str:
+    """
+    把请求头文本规范化为稳定的去重键：
+        1) 剔除易变请求头（见 VOLATILE_HEADERS）；
+        2) Accept 系列头去掉 q 权重后缀（如 ";q=0.9"）；
+        3) 头名统一小写、按字典序排序（消除书写顺序差异）。
+    """
+    lines = []
+    for line in headers_text.split("\n"):
+        line = line.strip()
+        if not line or ":" not in line:
+            continue
+        name, _, value = line.partition(":")
+        name = name.strip().lower()
+        if name in VOLATILE_HEADERS:
+            continue
+        value = value.strip()
+        if name.startswith("accept"):
+            value = re.sub(r";\s*q=[0-9.]+", "", value)
+        lines.append(f"{name}:{value}")
+    return "\n".join(sorted(lines))
+
+
 def build_dataset(save: bool = True) -> pd.DataFrame:
     """
     解析 data/raw 下全部数据文件，清洗后构建统一数据集。
 
     清洗步骤：
         1) 丢弃 URL 为空的记录（解析异常数据）；
-        2) 按 (method, url, body, label) 去重（原始数据存在大量重复报文）。
+        2) 激进去重：CSIC 2010 存在大量重复报文，但重复记录仅在
+           Cookie / Content-Length / Accept 权重等易变请求头上有微差，
+           故先对 headers 做规范化（_canonical_headers），再按
+           (method, url, 规范化headers, body, label) 全文级去重
+           （62,165 条 -> 约 2.66 万条）。不去重会导致近似重复样本
+           跨训练/测试集泄漏，指标虚高且泛化评估失真。
 
     参数:
         save: True 时保存到 data/processed/dataset.csv
@@ -514,9 +552,13 @@ def build_dataset(save: bool = True) -> pd.DataFrame:
         frames.append(pd.DataFrame(recs))
 
     df = pd.concat(frames, ignore_index=True)
-    df = df[df["url"].str.len() > 0]                                   # 去空
-    df = df.drop_duplicates(subset=["method", "url", "body", "label"])  # 去重
-    df = df.reset_index(drop=True)
+    df = df[df["url"].str.len() > 0]                                    # 去空
+    # 激进去重：先规范化 headers（剔除易变字段），再做全文级去重
+    df["_h_canon"] = df["headers"].map(_canonical_headers)
+    n_before = len(df)
+    df = df.drop_duplicates(subset=["method", "url", "_h_canon", "body", "label"])
+    df = df.drop(columns="_h_canon").reset_index(drop=True)
+    print(f"  √ 激进去重: {n_before} -> {len(df)} 条（去除 {n_before - len(df)} 条重复报文）")
 
     if save:
         save_path = PROCESSED_DIR / "dataset.csv"

@@ -1,0 +1,69 @@
+{
+  "corpus_cache_exact_match": true,
+  "raw_counts": {
+    "anomalousTrafficTest.txt": 25065,
+    "normalTrafficTest.txt": 36000,
+    "synthetic_command_injection.txt": 150,
+    "synthetic_normal.txt": 500,
+    "synthetic_path_traversal.txt": 150,
+    "synthetic_sql_injection.txt": 150,
+    "synthetic_xss.txt": 150
+  },
+  "retained_by_file": {
+    "anomalousTrafficTest.txt": 15964,
+    "normalTrafficTest.txt": 9622,
+    "synthetic_normal.txt": 463,
+    "synthetic_sql_injection.txt": 150,
+    "synthetic_xss.txt": 150,
+    "synthetic_command_injection.txt": 149,
+    "synthetic_path_traversal.txt": 148
+  },
+  "retained_labels": {
+    "1": 16561,
+    "0": 10085
+  },
+  "raw_total": 62165,
+  "retained_total": 26646,
+  "models": {
+    "逻辑回归": {
+      "rounded_summary_unique_confusion": [
+        {
+          "TN": 1829,
+          "FP": 188,
+          "FN": 1066,
+          "TP": 2247,
+          "FPR": 0.0932077342588002
+        }
+      ]
+    },
+    "随机森林": {
+      "rounded_summary_unique_confusion": [
+        {
+          "TN": 1752,
+          "FP": 265,
+          "FN": 569,
+          "TP": 2744,
+          "FPR": 0.13138324243926625
+        }
+      ]
+    },
+    "梯度提升树": {
+      "rounded_summary_unique_confusion": [
+        {
+          "TN": 1910,
+          "FP": 107,
+          "FN": 907,
+          "TP": 2406,
+          "FPR": 0.05304908279623203
+        }
+      ]
+    }
+  },
+  "adversarial_count_label_bug": {
+    "submitted_attack_row_sample_count": 120,
+    "actual_attacks_per_depth_from_code": 60,
+    "normal_per_depth": 60,
+    "cause": "int(m.sum()) includes both labels; rates are calculated with y_true masks",
+    "correction": "attack sample count to 60; rates unchanged"
+  }
+}

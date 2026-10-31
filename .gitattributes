@@ -1,9 +1,5 @@
+* text=auto
+*.py text eol=lf
 *.md text eol=lf
-*.json text eol=lf
-requirements.txt text eol=lf
-.gitignore text eol=lf
-*.py -text
-data/synthetic/*.txt -text -whitespace
-results/reference/metrics_summary.csv -text -whitespace
-examples/*.txt -whitespace
+*.csv text eol=lf
 *.png binary

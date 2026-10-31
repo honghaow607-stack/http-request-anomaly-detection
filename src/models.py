@@ -69,12 +69,12 @@ def build_models(y_train=None) -> dict:
 
     models = {
         # ---------- 1. 逻辑回归 ----------
-        # max_iter=5000: 真实 CSIC 数据（2 万+ 训练样本、1540 维特征）下
-        #                lbfgs 需要更多迭代才能收敛，2000 会触发 ConvergenceWarning
+        # max_iter=10000: n-gram(1~3) 升级后特征维度增至 5000+，
+        #                lbfgs 需要更多迭代才能收敛（5000 仍会触发 ConvergenceWarning）
         # C=1.0: 正则化强度的倒数（默认值），过大易过拟合、过小欠拟合
         # class_weight="balanced": 自动按类别频率的倒数加权，处理不平衡
         "逻辑回归": LogisticRegression(
-            max_iter=5000, C=1.0, class_weight="balanced",
+            max_iter=10000, C=1.0, class_weight="balanced",
             random_state=RANDOM_STATE,
         ),
         # ---------- 2. 随机森林 ----------

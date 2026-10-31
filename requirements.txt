@@ -1,12 +1,30 @@
-# Install with: python -m pip install -r requirements.txt
-# Minimum versions; this is not the original experiment's locked environment.
-numpy>=1.23
-pandas>=1.5
-scipy>=1.8
-scikit-learn>=1.2
-xgboost>=1.7
-joblib>=1.2
-matplotlib>=3.6
-seaborn>=0.12
-requests>=2.28
-streamlit>=1.24
+# ============================================================
+# 基于机器学习的恶意 HTTP 请求识别系统 —— 依赖清单
+# 安装命令：pip install -r requirements.txt
+# ============================================================
+
+# ---------- 数据处理 ----------
+pandas>=1.5          # 表格数据处理（DataFrame 读写、清洗）
+numpy>=1.23          # 数值计算（特征矩阵、数组运算）
+
+# ---------- 机器学习 ----------
+scikit-learn>=1.2    # 数据划分、逻辑回归、随机森林、评估指标、TF-IDF
+xgboost>=1.7         # 梯度提升树（对比模型之一）
+# 说明：技术选型允许 XGBoost 或 LightGBM 二选一。本机 Anaconda 环境下
+# LightGBM 4.7 的二进制库存在 DLL 崩溃问题（access violation），
+# 故选用 XGBoost。若你想用 LightGBM：pip install lightgbm，
+# 并把 src/models.py 中的 XGBClassifier 换回 LGBMClassifier 即可。
+joblib>=1.2          # 模型持久化（保存 / 加载 model.pkl）
+
+# ---------- 可视化 ----------
+matplotlib>=3.6      # 混淆矩阵热力图、ROC 曲线、特征重要性图
+seaborn>=0.12        # 基于 matplotlib 的统计图表美化
+
+# ---------- 数据获取 ----------
+requests>=2.28       # 自动下载 CSIC 2010 数据集（失败时自动走合成数据兜底）
+
+# ---------- 交互页面 ----------
+streamlit>=1.24      # 交互式预测页面（pip 一次安装，浏览器直接打开）
+
+# Direct dependency for the multi-seed statistical summaries
+scipy>=1.9

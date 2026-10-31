@@ -134,12 +134,14 @@ def parse_http_request(raw_text: str) -> dict:
     }
 
 
-def preprocess_dataset(df: pd.DataFrame) -> pd.DataFrame:
+def preprocess_dataset(df: pd.DataFrame, max_rounds: int = 3) -> pd.DataFrame:
     """
     为数据集 DataFrame 添加文本预处理列（训练与预测共用同一管线）。
 
-    必需输入列: method / url / path / query / headers / body
-                （缺失的列自动补空字符串，增强容错）
+    参数:
+        df: 必需输入列 method / url / path / query / headers / body（缺失自动补空）
+        max_rounds: URL 递归解码轮数（默认 3 轮，可对抗多重编码绕过；
+                    消融实验中设为 1 表示"单轮解码"对照组）
 
     新增列:
         decoded_url / decoded_body : 多轮解码后的 URL / Body
@@ -157,8 +159,8 @@ def preprocess_dataset(df: pd.DataFrame) -> pd.DataFrame:
         df[col] = df[col].fillna("").astype(str)
 
     # ---------- 多轮解码 ----------
-    df["decoded_url"] = df["url"].apply(recursive_url_decode)
-    df["decoded_body"] = df["body"].apply(recursive_url_decode)
+    df["decoded_url"] = df["url"].apply(lambda s: recursive_url_decode(s, max_rounds))
+    df["decoded_body"] = df["body"].apply(lambda s: recursive_url_decode(s, max_rounds))
 
     # ---------- TF-IDF 输入文本：原文 + 解码文（两种形态都保留） ----------
     df["text_url"] = df["url"] + " " + df["decoded_url"]

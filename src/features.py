@@ -81,7 +81,7 @@ XSS_KEYWORDS = [
 TRAVERSAL_KEYWORDS = [
     "../", "..\\", "..%2f", "%2e%2e", "....//", "etc/passwd", "etc%2fpasswd",
     "etc/shadow", "win.ini", "boot.ini", "system32", "/proc/self",
-    "%c0%ae", "..\/", "/etc/", "c:\\windows",
+    "%c0%ae", r"..\/", "/etc/", "c:\\windows",
 ]
 CMD_KEYWORDS = [
     "; cat", "| ls", "&& ", "|| ", "$( ", "`", "whoami", "ping -",
@@ -90,8 +90,8 @@ CMD_KEYWORDS = [
 ]
 
 # 4) TF-IDF 配置
-URL_TFIDF_MAX_FEATURES = 1000   # URL 文本词表上限
-BODY_TFIDF_MAX_FEATURES = 500   # Body 文本词表上限
+URL_TFIDF_MAX_FEATURES = 3000   # URL 文本词表上限（n-gram 1~3 组合数多，需更大词表）
+BODY_TFIDF_MAX_FEATURES = 2000  # Body 文本词表上限
 TFIDF_TOKEN_PATTERN = r"(?u)[\w%\-./:=?&]+"  # 自定义分词：保留 % . / = ? 等符号
                                               # （默认分词会丢掉 %2e 这类关键 token）
 
@@ -208,18 +208,30 @@ class FeaturePipeline:
     该对象会随模型一起保存进 model.pkl，保证预测时特征与训练一致。
     """
 
-    def __init__(self):
-        # URL 文本 TF-IDF：词级 1~2 元组，保留编码符号，子线性 TF 抑制长文本影响
+    def __init__(self, use_rules: bool = True, use_tfidf: bool = True,
+                 decode_rounds: int = 3):
+        """
+        参数（供消融实验构造对照组，默认全开 = 完整方案）:
+            use_rules:    是否拼接 40 维规则/统计特征
+            use_tfidf:    是否拼接 URL/Body TF-IDF
+            decode_rounds: URL 递归解码轮数（1 = 单轮解码对照组）
+        """
+        self.use_rules = use_rules
+        self.use_tfidf = use_tfidf
+        self.decode_rounds = decode_rounds
+        # URL 文本 TF-IDF：词级 1~3 元组（对齐 JKSCI 论文验证有效的配置，
+        # 可捕捉 'UNION SELECT'、'script alert XSS' 等攻击序列上下文），
+        # 保留编码符号，子线性 TF 抑制长文本影响
         self.url_tfidf = TfidfVectorizer(
             max_features=URL_TFIDF_MAX_FEATURES,
-            ngram_range=(1, 2),
+            ngram_range=(1, 3),
             token_pattern=TFIDF_TOKEN_PATTERN,
             sublinear_tf=True,
         )
-        # Body 文本 TF-IDF
+        # Body 文本 TF-IDF（同样升级为 1~3 元组）
         self.body_tfidf = TfidfVectorizer(
             max_features=BODY_TFIDF_MAX_FEATURES,
-            ngram_range=(1, 2),
+            ngram_range=(1, 3),
             token_pattern=TFIDF_TOKEN_PATTERN,
             sublinear_tf=True,
         )
@@ -228,12 +240,12 @@ class FeaturePipeline:
 
     def fit_transform(self, df: pd.DataFrame) -> sparse.csr_matrix:
         """训练阶段入口：拟合 TF-IDF 词表并输出完整特征矩阵。"""
-        df = preprocess_dataset(df)
-        rule_feats = extract_rule_features(df)      # 规则特征（无状态）
-        self.rule_feature_names_ = rule_feats.columns.tolist()
-
+        df = preprocess_dataset(df, max_rounds=self.decode_rounds)
         url_mat = self.url_tfidf.fit_transform(df["text_url"])    # 拟合 + 转换
         body_mat = self.body_tfidf.fit_transform(df["text_body"])
+        rule_feats = extract_rule_features(df) if self.use_rules else None
+        if rule_feats is not None:
+            self.rule_feature_names_ = rule_feats.columns.tolist()
         self._fitted = True
         return self._stack(rule_feats, url_mat, body_mat)
 
@@ -241,16 +253,20 @@ class FeaturePipeline:
         """预测阶段入口：只做转换，不重新拟合词表。"""
         if not self._fitted:
             raise RuntimeError("FeaturePipeline 尚未 fit，请先调用 fit_transform！")
-        df = preprocess_dataset(df)
-        rule_feats = extract_rule_features(df)
+        df = preprocess_dataset(df, max_rounds=self.decode_rounds)
         url_mat = self.url_tfidf.transform(df["text_url"])        # 只转换
         body_mat = self.body_tfidf.transform(df["text_body"])
+        rule_feats = extract_rule_features(df) if self.use_rules else None
         return self._stack(rule_feats, url_mat, body_mat)
 
-    def _stack(self, rule_feats: pd.DataFrame, url_mat, body_mat) -> sparse.csr_matrix:
-        """把规则特征（稠密）与两块 TF-IDF（稀疏）横向拼接为一个稀疏矩阵。"""
-        rule_sparse = sparse.csr_matrix(rule_feats.to_numpy(dtype=np.float32))
-        return sparse.hstack([rule_sparse, url_mat, body_mat]).tocsr()
+    def _stack(self, rule_feats, url_mat, body_mat) -> sparse.csr_matrix:
+        """按开关把规则特征（稠密）与 TF-IDF（稀疏）横向拼接为稀疏矩阵。"""
+        blocks = []
+        if rule_feats is not None:
+            blocks.append(sparse.csr_matrix(rule_feats.to_numpy(dtype=np.float32)))
+        if self.use_tfidf:
+            blocks += [url_mat, body_mat]
+        return sparse.hstack(blocks).tocsr()
 
     def get_feature_names_out(self) -> list:
         """
@@ -260,11 +276,11 @@ class FeaturePipeline:
         """
         if not self._fitted:
             raise RuntimeError("FeaturePipeline 尚未 fit！")
-        return (
-            self.rule_feature_names_
-            + [f"tfidf_url__{w}" for w in self.url_tfidf.get_feature_names_out()]
-            + [f"tfidf_body__{w}" for w in self.body_tfidf.get_feature_names_out()]
-        )
+        names = list(self.rule_feature_names_) if self.rule_feature_names_ else []
+        if self.use_tfidf:
+            names += ([f"tfidf_url__{w}" for w in self.url_tfidf.get_feature_names_out()]
+                      + [f"tfidf_body__{w}" for w in self.body_tfidf.get_feature_names_out()])
+        return names
 
 
 # ============================================================
