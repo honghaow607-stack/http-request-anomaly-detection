@@ -1,0 +1,135 @@
+{
+  "status": "complete",
+  "seeds": [
+    42,
+    1337,
+    2024,
+    7,
+    99
+  ],
+  "configurations": [
+    "hybrid_word_separate",
+    "numerical_only",
+    "word_text_only",
+    "hybrid_word_joined",
+    "hybrid_char3_separate"
+  ],
+  "data_sha256": "d420465b55f40eaf07413bee97cdc4e62457d5702f310ae17bf3ea12e88b02cf",
+  "protocol_sha256": "d672e8a75c94d98e6a5491a55e60bab06d83924b56150939d04535c8e4f70187",
+  "script_sha256": "8391b9e28af730348beb5e18651cf4f3ceef9c744056846c7d7528452776f9e0",
+  "source_sha256": {
+    "src/features.py": "d065df510b2f26ab1b0be1c16193bf5fcd307fe593c40a3b8dd0473b843465e8",
+    "src/preprocess.py": "4603a1f061717cde1278556d5f4fe7767ed1faf7d9effdc441d9be4beb3ded07",
+    "src/data_loader.py": "7c1022f728c634081655befbea8a40efe93ff807d843c3c1e424c89b50a989a8"
+  },
+  "raw_file_sha256": {
+    "anomalousTrafficTest.txt": "ec77d784966896330869c5b596ede6a716101c14b5f139144915bb10822a03e1",
+    "normalTrafficTest.txt": "f4526669566789be7fd99f79e1bc2989ab39e74ab7ed5d667621fe23dce4ea6f",
+    "synthetic_command_injection.txt": "47ae45d00603690b23694b145065528e8c94765f69f5ec4d857011f372b1ad81",
+    "synthetic_normal.txt": "b60623e99e0ff09bbdfaf175ab5722800027de34e1bd2f1351d2c1f23e6b4322",
+    "synthetic_path_traversal.txt": "0ad68cdedab6f602790d1f65f45686da15176b468ca9177eefc37c0a2feb2cd3",
+    "synthetic_sql_injection.txt": "42933115a8614fc17c62a8d09fec3b37c138125dbe66b7cf9d60af604604808b",
+    "synthetic_xss.txt": "91a38ff11f104faa202085dd42ea34aa64984c65f97e157a0b92e71de1a16a0b"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.11.4",
+    "scikit_learn": "1.3.2",
+    "platform": "macOS-26.5.1-arm64-arm-64bit"
+  },
+  "decision_rule": "estimator.predict; exact score-0.5 ties assigned class 0",
+  "raw_cache_exact_match": true,
+  "origin_counts": {
+    "csic": 25586,
+    "local_synthetic": 1060
+  },
+  "splits": [
+    {
+      "seed": 42,
+      "counts": {
+        "train": 17052,
+        "validation": 4264,
+        "test": 5330
+      },
+      "index_sha256": {
+        "train": "8685833a0b44bb8faedd5ee9cd73211b99975106347d03cd6773bf86c75326dd",
+        "validation": "3d0f49fe8c77342430c0295b9781ac968e97e94cd81c6401e3fa34219e0b0691",
+        "test": "6e016e6f0946caf5d0b5dcb6d709c4aaf399e9b6e8374efc190f3ddd86ae5f05"
+      }
+    },
+    {
+      "seed": 1337,
+      "counts": {
+        "train": 17052,
+        "validation": 4264,
+        "test": 5330
+      },
+      "index_sha256": {
+        "train": "7b3ef5e84947469fd288a4f053c72d849b18361cf7a23fc655a439c6cd02e813",
+        "validation": "3d5ec274811fe4a371da570fd5d333b326d834f0191abc1fbaa8e31fb3b2268f",
+        "test": "aae9c91773e5833b47afb3ce9c3eb9e2c00dd4195d264daacc4b31ffe582a9ad"
+      }
+    },
+    {
+      "seed": 2024,
+      "counts": {
+        "train": 17052,
+        "validation": 4264,
+        "test": 5330
+      },
+      "index_sha256": {
+        "train": "ac48c69424f64898537dfae67e1604af6e0917ebad3cbfe5d814b49b4e0bfbcf",
+        "validation": "ec922e1b5441be56556e885b8cca3d26cb7ada53dde1adb8fa4a15487d5fdfba",
+        "test": "99d9ed2b41bcf2cea983b974cf9a434305fffc6871cc61e435f2b6eb87b83630"
+      }
+    },
+    {
+      "seed": 7,
+      "counts": {
+        "train": 17052,
+        "validation": 4264,
+        "test": 5330
+      },
+      "index_sha256": {
+        "train": "e77501e02a98ced705bdec46419b1176c96de5b907b1bac9385a013a564c9485",
+        "validation": "7d4d04ba2fa4fee8060ced0246b7390c5495a7f63e010e7df53d3bb8198dc601",
+        "test": "8318379bc357e32bde116fc59079ff1c569008add3b7e4f6405d75ccc87e2195"
+      }
+    },
+    {
+      "seed": 99,
+      "counts": {
+        "train": 17052,
+        "validation": 4264,
+        "test": 5330
+      },
+      "index_sha256": {
+        "train": "2c4256798aa8c6cbf042353e3088c7d681d85a21f11efd110d9e7eebea020ab5",
+        "validation": "7909f13e5887a586683f5df134a70436973810aad15120db3801345c1ee8dc05",
+        "test": "757b639ee5fc3a34e222692d7c9ca12f5f994d606a0a25ba5904172be3674eea"
+      }
+    }
+  ],
+  "model_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  }
+}

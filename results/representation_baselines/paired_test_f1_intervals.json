@@ -1,0 +1,50 @@
+[
+  {
+    "baseline": "numerical_only",
+    "reference": "hybrid_word_separate",
+    "delta_f1_pp": 4.265336501793914,
+    "conditional_ci95_pp": [
+      3.4590252705167983,
+      5.055060454071522
+    ],
+    "bootstrap_resamples": 2000,
+    "stratified_by_label": true,
+    "scope": "Conditional record-level test resampling; not independent-template inference"
+  },
+  {
+    "baseline": "word_text_only",
+    "reference": "hybrid_word_separate",
+    "delta_f1_pp": 10.089990887894807,
+    "conditional_ci95_pp": [
+      8.932154382170502,
+      11.202932102846546
+    ],
+    "bootstrap_resamples": 2000,
+    "stratified_by_label": true,
+    "scope": "Conditional record-level test resampling; not independent-template inference"
+  },
+  {
+    "baseline": "hybrid_word_joined",
+    "reference": "hybrid_word_separate",
+    "delta_f1_pp": -1.572198347658904,
+    "conditional_ci95_pp": [
+      -2.0922837472201685,
+      -1.068766385050642
+    ],
+    "bootstrap_resamples": 2000,
+    "stratified_by_label": true,
+    "scope": "Conditional record-level test resampling; not independent-template inference"
+  },
+  {
+    "baseline": "hybrid_char3_separate",
+    "reference": "hybrid_word_separate",
+    "delta_f1_pp": -8.051417013769735,
+    "conditional_ci95_pp": [
+      -8.925784969267186,
+      -7.182762343239128
+    ],
+    "bootstrap_resamples": 2000,
+    "stratified_by_label": true,
+    "scope": "Conditional record-level test resampling; not independent-template inference"
+  }
+]

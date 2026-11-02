@@ -2,7 +2,7 @@
 
 Hybrid numerical and word-level TF-IDF features for HTTP request anomaly classification, with logistic regression, random forest and XGBoost; command-line and Streamlit inspection reuse a saved fitted pipeline.
 
-This revision adds a separate validation partition, header-aware deduplication, five-seed component ablations, ATRDF evaluation, cross-subset checks, query re-encoding probes and an interface threshold sweep. The CSV files are supplied experimental outputs; the checks in `docs/result_audit.json` do not represent a fresh training run.
+The original experiment archive covers a separate validation partition, header-aware deduplication, five-seed component ablations, ATRDF evaluation, cross-subset checks, query re-encoding probes and an interface threshold sweep. The checks in `docs/result_audit.json` audit those supplied outputs. A separately rerun matched representation study, including all five configurations and per-request predictions, is now recorded in `results/representation_baselines/`.
 
 ## Quick start
 
@@ -39,7 +39,34 @@ The primary corpus contains 62,165 parsed requests and **26,646 retained records
 | Random forest | 0.8435 | 0.9119 | 0.8283 | 0.8681 | 0.9274 |
 | XGBoost | 0.8098 | 0.9574 | 0.7262 | 0.8260 | 0.9177 |
 
-These are results for the mixed CSIC/local corpus under this protocol, not scores for a CSIC-only test or production traffic. All methods use the same representation; there is no matched reproduction of external papers.
+These are results for the mixed CSIC/local corpus under this protocol, not scores for a CSIC-only test or production traffic. All three classifiers in this table use the same representation. The additional matched encoding comparisons below are controlled adaptations of related representation choices, not complete reproductions of external systems.
+
+## Matched representation baselines
+
+Five fixed representations were fitted with the same 200-tree balanced RF, corpus and seeds (42, 1337, 2024, 7, 99). All use estimator `predict`; exact score-0.5 ties are class 0. Vocabularies are fitted on training records only, with no hyperparameter or threshold search.
+
+| Representation | Validation F1, mean ± sample SD | Seed-42 test recall | Test F1 | Test FPR |
+|---|---:|---:|---:|---:|
+| Numerical only | 0.8234 ± 0.0043 | 0.8035 | 0.8254 | 0.2355 |
+| Word text only | 0.7306 ± 0.0488 | 0.7296 | 0.7672 | 0.2831 |
+| Existing separate-word hybrid | 0.8685 ± 0.0052 | 0.8283 | 0.8681 | 0.1314 |
+| Joined-word hybrid | 0.8807 ± 0.0046 | 0.8449 | 0.8838 | 0.1101 |
+| Character-3-gram hybrid | **0.9488 ± 0.0009** | **0.9469** | **0.9486** | **0.0813** |
+
+The existing combination improves test F1 over numerical-only and word-text-only RF by 4.27 and 10.09 percentage points. The joined-word and character alternatives perform better than the existing word encoding in all five validation runs. Their seed-42 F1 gains over it are 1.57 and 8.05 points. These results support feature-block fusion under this protocol; they do not support superiority of the existing field-separated word encoding. The character configuration is an evaluated alternative; the normal training/inspection command still uses the original word pipeline.
+
+The original word-hybrid test result separates into **5,121 CSIC requests** (F1 0.8629, recall 0.8219, FPR 0.1375) and **209 local synthetic requests** (F1 1.0000, recall 1.0000, FPR 0.0000). Both are evaluated after mixed-corpus training. The synthetic subset is small and is not independent application traffic.
+
+For a reproducible run, first prepare the fixed raw files as above and build the cache with `python -c "from src.data_loader import load_dataset; load_dataset(rebuild=True)"`. Then use the pinned supplementary environment and a new output directory:
+
+```bash
+pip install -r docs/requirements-representation-baselines.txt
+python scripts/run_representation_baselines.py \
+  --protocol results/representation_baselines/protocol.md \
+  --output results/representation_baselines_rerun
+```
+
+The runner aborts unless the 26,646 cached records exactly match representatives reconstructed from the raw files. It does not silently replace missing data with synthetic examples. See [docs/REPRESENTATION_BASELINES.md](docs/REPRESENTATION_BASELINES.md) for provenance, baseline definitions and conditional uncertainty. Read stored floating scores with pandas `float_precision="round_trip"` when auditing ROC-AUC ties.
 
 ## Component ablations
 
@@ -92,8 +119,9 @@ A submitted CSV column counted 120 total requests as the attack-row sample size.
 ## Files and reproducibility
 
 - `src/`, `run.py`: parsing, feature construction, classifiers and interfaces.
-- `scripts/`: ablation, multi-seed, ATRDF, encoding and interface evaluations.
-- `ablation/data/`, `results/`: exact supplied aggregate outputs and figures.
+- `scripts/`: ablation, matched-representation, ATRDF, encoding and interface evaluations.
+- `ablation/data/`, `results/`: original aggregate outputs and figures, plus the separately rerun matched study.
+- `results/representation_baselines/`: fixed protocol, runtime and input hashes, 30 metric rows, paired intervals, per-request predictions, source breakdowns and verification.
 - `data/synthetic/`: fixed local examples used by the preparation command.
 - `docs/DATA.md`: third-party sources and expected local paths.
 - `docs/result_audit.json`: corpus/cache and confusion-count checks.

@@ -1,0 +1,17 @@
+{
+  "all_30_metric_rows_recomputed": true,
+  "floating_scores_read_with_round_trip_precision": true,
+  "five_configs_all_five_validation_seeds": true,
+  "seed42_test_all_configs": true,
+  "raw_cache_exact_match": true,
+  "hybrid_dimensions_all_5040": true,
+  "original_test_confusion_reproduced": true,
+  "original_score_threshold_ablation_max_f1_difference": {
+    "hybrid_word_separate": 1.1102230246251565e-16,
+    "numerical_only": 1.1102230246251565e-16,
+    "word_text_only": 1.1102230246251565e-16
+  },
+  "joined_and_character_better_on_all_five_validation_seeds": true,
+  "protocol_and_script_hashes_unchanged_since_run_start": true,
+  "independent_template_test": false
+}
